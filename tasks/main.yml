@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT-0
 ---
 - name: Install TPI CLI
+  delegate_to: localhost
   block:
     - name: Check OS Type
       ansible.builtin.shell: uname
