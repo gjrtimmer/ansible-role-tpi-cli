@@ -5,4 +5,4 @@
   gather_facts: false
   remote_user: root
   roles:
-    - ansible-role-tpi-cli
+    - .
