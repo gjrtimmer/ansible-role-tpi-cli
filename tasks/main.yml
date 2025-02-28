@@ -12,6 +12,14 @@
       ansible.builtin.set_fact:
         os: "{{ uname.stdout | lower }}"
 
+    - name: Set Architecture x86_64
+      ansible.builtin.set_fact:
+        architecture: "{{ 'x86_64' if ansible_architecture == 'am64' else ansible_architecture }}"
+
+    - name: Set Architecture aarch64
+      ansible.builtin.set_fact:
+        architecture: "{{ 'aarch64' if ansible_architecture == 'arm64' else ansible_architecture }}"
+
     - name: Set URL Linux
       when: os == 'linux'
       ansible.builtin.set_fact:
