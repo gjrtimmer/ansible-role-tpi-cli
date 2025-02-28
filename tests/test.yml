@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: MIT-0
+---
+- name: Install TPI CLI
+  hosts: "{{ ansible_limit|default('nodes,!tpi') }}"
+  gather_facts: false
+  remote_user: root
+  roles:
+    - ansible-role-tpi-cli
